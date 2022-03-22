@@ -1,0 +1,16 @@
+.outer-bar {
+  height: 8px;
+  width: 100%;
+  background: #d8d8d8;
+}
+
+.inner-bar {
+  height: 100%;
+  border-radius: 0 3rem 3rem 0;
+  background: linear-gradient(290.47deg, #3797fa 11.33%, #45c9ff 83.66%);
+  transition: all 0.3s ease;
+}
+
+.no-round {
+  border-radius: 0 !important;
+}
