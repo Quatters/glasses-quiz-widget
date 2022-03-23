@@ -48,6 +48,10 @@ function App() {
             sunglasses={parameters.eyewear_type === 211}
           />
         );
+      case 6:
+        return (
+          <Screens.Screen6 onNext={handleNext} gender={parameters.gender} />
+        );
       default:
         return <p>Screen {num} not found.</p>;
     }
