@@ -25,9 +25,9 @@ function Screen42(props) {
       <button
         className='btn-transparent text-additional text-underlined fixed-bottom fixed-centered'
         style={{ marginBottom: '1.5rem' }}
-        onClick={props.onDontKnow}
+        onClick={props.onSkip}
       >
-        I don't know
+        I'm not sure
       </button>
     </div>
   );
