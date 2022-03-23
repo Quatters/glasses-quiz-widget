@@ -8,12 +8,14 @@ function App() {
   const [currentScreen, setCurrentScreen] = useState(0);
   const [parameters, setParameters] = useState({});
 
-  function handleNext(event, parameter) {
-    if (parameter)
-      setParameters({
-        ...parameters,
-        [Object.keys(parameter)[0]]: parameter[Object.keys(parameter)[0]],
+  function handleNext(event, params) {
+    if (params) {
+      let newParameters = parameters;
+      Object.keys(params).forEach(key => {
+        newParameters = { ...newParameters, [key]: params[key] };
       });
+      setParameters(newParameters);
+    }
     setCurrentScreen(currentScreen + 1);
   }
 
