@@ -37,6 +37,8 @@ function App() {
         );
       case 3:
         return <Screens.Screen3 onNext={handleNext} />;
+      case 4:
+        return <Screens.Screen4 onNext={handleNext} />;
       default:
         return <p>Screen {num} not found.</p>;
     }
