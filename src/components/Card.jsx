@@ -4,19 +4,32 @@ import '../style/Card.css';
 function Card(props) {
   return (
     <button
-      className={`card d-flex w-100 ${props.className} ${
+      className={`card d-flex w-100 align-items-center ${props.className} ${
         props.inline
-          ? 'justify-content-between'
-          : 'flex-column align-items-center'
+          ? props.img
+            ? ''
+            : 'justify-content-between'
+          : 'flex-column'
       }`}
       style={{
         ...props.style,
-        padding: `${props.inline ? '1rem 1.5rem' : '2rem'}`,
+        padding: `${
+          props.inline ? (props.img ? '1.5rem 1.8rem' : '1rem 1.5rem') : '2rem'
+        }`,
       }}
       onClick={props.onClick}
     >
       {props.img && (
-        <img src={props.img} alt='' style={{ marginBottom: '1rem' }} />
+        <>
+          <img
+            src={props.img}
+            alt=''
+            style={{
+              marginBottom: `${props.inline ? '0' : '1rem'}`,
+            }}
+          />
+          {props.inline && <div className='divider'></div>}
+        </>
       )}
       <p className='text-answer'>{props.text}</p>
       {props.additionalText && (
