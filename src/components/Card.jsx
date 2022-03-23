@@ -14,7 +14,7 @@ function Card(props) {
       style={{
         ...props.style,
         padding: `${
-          props.inline ? (props.img ? '1.5rem 1.8rem' : '1rem 1.5rem') : '2rem'
+          props.inline ? (props.img ? '1.5rem 1.2rem' : '1rem 1.5rem') : '2rem'
         }`,
       }}
       onClick={props.onClick}
