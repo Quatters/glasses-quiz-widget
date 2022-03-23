@@ -47,12 +47,23 @@
   color: #425a60;
 }
 
+.text-answer-additional {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  color: #0f0f0f;
+}
+
 .d-flex {
   display: flex;
 }
 
 .justify-content-center {
   justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
 }
 
 .justify-content-end {
