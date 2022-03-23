@@ -52,6 +52,8 @@ function App() {
         return (
           <Screens.Screen6 onNext={handleNext} gender={parameters.gender} />
         );
+      case 7:
+        return <Screens.Screen7 onNext={handleNext} />;
       default:
         return <p>Screen {num} not found.</p>;
     }
