@@ -41,6 +41,13 @@ function App() {
         return <Screens.Screen3 onNext={handleNext} />;
       case 4:
         return <Screens.Screen4 onNext={handleNext} />;
+      case 5:
+        return (
+          <Screens.Screen5
+            onNext={handleNext}
+            sunglasses={parameters.eyewear_type === 211}
+          />
+        );
       default:
         return <p>Screen {num} not found.</p>;
     }
