@@ -4,10 +4,7 @@ import sizesIcon from '../img/sizes icon.svg';
 
 function Screen41(props) {
   return (
-    <div
-      className='d-flex flex-column align-items-center'
-      style={{ padding: '3rem' }}
-    >
+    <div className='screen'>
       <p className='text-question' style={{ marginBottom: '2.5rem' }}>
         What's your current frame size?
       </p>

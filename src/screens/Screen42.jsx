@@ -3,10 +3,7 @@ import Card from '../components/Card';
 
 function Screen42(props) {
   return (
-    <div
-      className='d-flex flex-column align-items-center'
-      style={{ padding: '3rem' }}
-    >
+    <div className='screen'>
       <p className='text-question' style={{ marginBottom: '2.5rem' }}>
         How wide would you say your face is?
       </p>

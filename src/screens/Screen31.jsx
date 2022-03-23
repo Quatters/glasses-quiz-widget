@@ -3,10 +3,7 @@ import Card from '../components/Card';
 
 function Screen31(props) {
   return (
-    <div
-      className='d-flex flex-column align-items-center'
-      style={{ padding: '3rem' }}
-    >
+    <div className='screen'>
       <p className='text-question' style={{ marginBottom: '1.5rem' }}>
         Do you need vision correction?
       </p>

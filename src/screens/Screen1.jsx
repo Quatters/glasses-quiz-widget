@@ -5,7 +5,7 @@ import women from '../img/women.svg';
 
 function Screen1(props) {
   return (
-    <div className='d-flex flex-column' style={{ padding: '3rem' }}>
+    <div className='screen'>
       <p className='text-question' style={{ marginBottom: '1.5rem' }}>
         You are looking for
       </p>
