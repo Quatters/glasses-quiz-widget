@@ -34,7 +34,6 @@ function App() {
       .querySelector('#glasses-quiz-widget')
       .getAttribute('data-source');
     baseUrl = baseUrl.slice(1).slice(0, -1);
-    console.log('parameters: ', parameters);
 
     let url = baseUrl + '?';
     Object.keys(parameters).forEach(key => {
