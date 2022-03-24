@@ -29,6 +29,25 @@ function App() {
     setCurrentScreen(currentScreen - 1);
   }
 
+  function getUrl() {
+    let baseUrl = document
+      .querySelector('#glasses-quiz-widget')
+      .getAttribute('data-source');
+    baseUrl = baseUrl.slice(1).slice(0, -1);
+    console.log('parameters: ', parameters);
+
+    let url = baseUrl + '?';
+    Object.keys(parameters).forEach(key => {
+      if (parameters[key]) url = `${url}${key}=${parameters[key]}&`;
+    });
+
+    return url.slice(0, -1);
+  }
+
+  function handleSend() {
+    console.log('URL: ', getUrl());
+  }
+
   function getScreen(num) {
     switch (num) {
       case 0:
@@ -62,6 +81,8 @@ function App() {
         return <Screens.Screen9 onNext={handleNext} />;
       case 10:
         return <Screens.Screen10 onNext={handleNext} />;
+      case 11:
+        return <Screens.End onExit={handleExit} onSend={handleSend} />;
       default:
         return <p>Screen {num} not found.</p>;
     }

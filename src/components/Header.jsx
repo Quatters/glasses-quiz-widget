@@ -9,16 +9,25 @@ import ProgressBar from './ProgressBar';
 function Header(props) {
   return (
     <div className='header'>
-      {props.screen === 0 && (
+      {(props.screen === 0 || props.screen === 11) && (
         <div className='content without-progress'>
-          {' '}
           <img className='logo' src={logo} alt='Otimax Dev logo' />
-          <button
-            onClick={props.onNext}
-            className='btn-transparent align-self-center'
-          >
-            <img src={arrowRight} alt='Start' />
-          </button>
+          {props.screen === 0 && (
+            <button
+              onClick={props.onNext}
+              className='btn-transparent align-self-center'
+            >
+              <img src={arrowRight} alt='Start' />
+            </button>
+          )}
+          {props.screen === 11 && (
+            <button
+              onClick={props.onExit}
+              className='btn-transparent align-self-center'
+            >
+              <img src={exit} alt='Exit' />
+            </button>
+          )}
         </div>
       )}
       {props.screen > 0 && props.screen < 11 && (
@@ -35,7 +44,7 @@ function Header(props) {
           </button>
         </div>
       )}
-      {props.screen > 0 && props.screen < 11 && (
+      {props.screen > 0 && props.screen <= 11 && (
         <ProgressBar progress={props.screen <= 10 ? props.screen * 10 : 100} />
       )}
     </div>
