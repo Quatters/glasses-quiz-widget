@@ -15,31 +15,31 @@ import wayframe from '../img/wayframe.png';
 import wrap from '../img/wrap.png';
 import '../style/Screen8.css';
 
-const cardSetup = [
-  [
-    { text: 'Rectangle', img: rectangle, param: 'rectangle' },
-    { text: 'Wayframe', img: wayframe, param: 'wayframe' },
-    { text: 'Cat Eye', img: catEye, param: 'cat_eye' },
-  ],
-  [
-    { text: 'Browline', img: browline, param: 'browline' },
-    { text: 'Round', img: round, param: 'round' },
-    { text: 'Rimless', img: rimless, param: 'rimless' },
-  ],
-  [
-    { text: 'Aviator', img: aviator, param: 'aviator' },
-    { text: 'Oval', img: oval, param: 'oval' },
-    { text: 'Square', img: square, param: 'square' },
-  ],
-  [
-    { text: 'Geometric', img: geometric, param: 'geometric' },
-    { text: 'Oversized', img: oversized, param: 'oversized' },
-    { text: 'Wrap', img: wrap, param: 'wrap' },
-  ],
-];
-
 function Screen8(props) {
-  const [selected, setSelected] = useState(parseSelectedFromProps());
+  const cardSetup = [
+    [
+      { text: 'Rectangle', img: rectangle, param: 'rectangle' },
+      { text: 'Wayframe', img: wayframe, param: 'wayframe' },
+      { text: 'Cat Eye', img: catEye, param: 'cat_eye' },
+    ],
+    [
+      { text: 'Browline', img: browline, param: 'browline' },
+      { text: 'Round', img: round, param: 'round' },
+      { text: 'Rimless', img: rimless, param: 'rimless' },
+    ],
+    [
+      { text: 'Aviator', img: aviator, param: 'aviator' },
+      { text: 'Oval', img: oval, param: 'oval' },
+      { text: 'Square', img: square, param: 'square' },
+    ],
+    [
+      { text: 'Geometric', img: geometric, param: 'geometric' },
+      { text: 'Oversized', img: oversized, param: 'oversized' },
+      { text: 'Wrap', img: wrap, param: 'wrap' },
+    ],
+  ];
+
+  const [selected, setSelected] = useState([]);
   const [cards, setCards] = useState(cardSetup);
 
   function handleSelect(param, x, y) {
@@ -55,13 +55,6 @@ function Screen8(props) {
       newSelected.push(param);
     }
     setSelected(newSelected);
-  }
-
-  function parseSelectedFromProps() {
-    if (props.shape) {
-      return props.shape.split(',');
-    }
-    return [];
   }
 
   return (

@@ -15,31 +15,31 @@ import versace from '../img/versace.png';
 import vogue from '../img/vogue.png';
 import '../style/Screen10.css';
 
-const cardSetup = [
-  [
-    { img: rayBan, param: 'ray_ban' },
-    { img: hilaryDuff, param: 'hilary_duff' },
-    { img: michaelKors, param: 'michael_kors' },
-  ],
-  [
-    { img: oakley, param: 'oakley' },
-    { img: prada, param: 'prada' },
-    { img: coach, param: 'coach' },
-  ],
-  [
-    { img: gucci, param: 'gucci' },
-    { img: versace, param: 'versace' },
-    { img: toryBurch, param: 'tory_burch' },
-  ],
-  [
-    { img: armaniExchange, param: 'armani_exchange' },
-    { img: vogue, param: 'vogue' },
-    { img: burberry, param: 'burberry' },
-  ],
-];
-
 function Screen10(props) {
-  const [selected, setSelected] = useState(parseSelectedFromProps());
+  const cardSetup = [
+    [
+      { img: rayBan, param: 'ray_ban' },
+      { img: hilaryDuff, param: 'hilary_duff' },
+      { img: michaelKors, param: 'michael_kors' },
+    ],
+    [
+      { img: oakley, param: 'oakley' },
+      { img: prada, param: 'prada' },
+      { img: coach, param: 'coach' },
+    ],
+    [
+      { img: gucci, param: 'gucci' },
+      { img: versace, param: 'versace' },
+      { img: toryBurch, param: 'tory_burch' },
+    ],
+    [
+      { img: armaniExchange, param: 'armani_exchange' },
+      { img: vogue, param: 'vogue' },
+      { img: burberry, param: 'burberry' },
+    ],
+  ];
+
+  const [selected, setSelected] = useState([]);
   const [cards, setCards] = useState(cardSetup);
 
   function handleSelect(param, x, y) {
@@ -55,13 +55,6 @@ function Screen10(props) {
       newSelected.push(param);
     }
     setSelected(newSelected);
-  }
-
-  function parseSelectedFromProps() {
-    if (props.shape) {
-      return props.shape.split(',');
-    }
-    return [];
   }
 
   return (
