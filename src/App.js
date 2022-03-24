@@ -8,7 +8,7 @@ function App() {
   const [currentScreen, setCurrentScreen] = useState(0);
   const [parameters, setParameters] = useState({});
 
-  function handleNext(event, params) {
+  function handleNext(event, params, skip) {
     if (params) {
       let newParameters = parameters;
       Object.keys(params).forEach(key => {
@@ -16,7 +16,8 @@ function App() {
       });
       setParameters(newParameters);
     }
-    setCurrentScreen(currentScreen + 1);
+    skip = 1 + skip || 1;
+    setCurrentScreen(currentScreen + skip);
   }
 
   function handleExit() {
@@ -56,6 +57,8 @@ function App() {
         return <Screens.Screen7 onNext={handleNext} />;
       case 8:
         return <Screens.Screen8 onNext={handleNext} shape={parameters.shape} />;
+      case 9:
+        return <Screens.Screen9 onNext={handleNext} />;
       default:
         return <p>Screen {num} not found.</p>;
     }

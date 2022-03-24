@@ -7,6 +7,7 @@ import Screen5 from './Screen5';
 import Screen6 from './Screen6';
 import Screen7 from './Screen7';
 import Screen8 from './Screen8';
+import Screen9 from './Screen9';
 
 export {
   Start,
@@ -18,4 +19,5 @@ export {
   Screen6,
   Screen7,
   Screen8,
+  Screen9,
 };
