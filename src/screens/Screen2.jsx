@@ -6,7 +6,6 @@ import eyeglassesWomen from '../img/eyeglasses-women.svg';
 import sunglassesWomen from '../img/sunglasses-women.svg';
 
 function Screen2(props) {
-  console.log(props.gender);
   return (
     <div className='screen'>
       <p className='text-question' style={{ marginBottom: '1.5rem' }}>
