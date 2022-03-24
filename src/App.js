@@ -21,7 +21,8 @@ function App() {
   }
 
   function handleExit() {
-    console.log('exit');
+    setCurrentScreen(0);
+    setParameters({});
   }
 
   function handlePrev() {
