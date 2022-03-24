@@ -41,6 +41,14 @@
   color: #0f0f0f;
 }
 
+.text-question-additional {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  color: #697580;
+}
+
 .text-answer {
   font-weight: 600;
   font-size: 18px;
@@ -120,5 +128,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.8rem;
+  padding: 1.5rem 1rem;
+}
+
+.hidden {
+  display: none;
 }

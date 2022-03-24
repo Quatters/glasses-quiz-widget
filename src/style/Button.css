@@ -9,4 +9,10 @@
   color: #ffffff;
   outline: none;
   border: none;
+  min-width: 12rem;
+}
+
+.btn-primary:disabled {
+  background: #dedede;
+  color: #ffffff;
 }

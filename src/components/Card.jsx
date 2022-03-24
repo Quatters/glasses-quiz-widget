@@ -1,10 +1,13 @@
 import React from 'react';
 import '../style/Card.css';
+import vIcon from '../img/(v) icon.svg';
 
 function Card(props) {
   return (
     <button
-      className={`card d-flex w-100 align-items-center ${props.className} ${
+      className={`card d-flex w-100 align-items-center ${
+        props.selected ? 'selected' : ''
+      } ${props.className} ${
         props.inline
           ? props.img
             ? ''
@@ -19,11 +22,17 @@ function Card(props) {
       }}
       onClick={props.onClick}
     >
+      <img
+        src={vIcon}
+        alt='Selected'
+        className={props.selected ? 'selected-icon' : 'hidden'}
+      />
       {props.img && (
         <>
           <img
             src={props.img}
             alt=''
+            className='img'
             style={{
               marginBottom: `${props.inline ? '0' : '1rem'}`,
             }}

@@ -54,6 +54,8 @@ function App() {
         );
       case 7:
         return <Screens.Screen7 onNext={handleNext} />;
+      case 8:
+        return <Screens.Screen8 onNext={handleNext} shape={parameters.shape} />;
       default:
         return <p>Screen {num} not found.</p>;
     }

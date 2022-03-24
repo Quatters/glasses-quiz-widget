@@ -3,9 +3,16 @@
   border: 1px solid rgba(231, 235, 237, 0.80141);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
   border-radius: 14px;
+  position: relative;
 }
 
-.card > img {
+.card .selected-icon {
+  position: absolute;
+  right: -7px;
+  top: -7px;
+}
+
+.card .img {
   margin-bottom: 0.7rem;
 }
 
@@ -14,4 +21,8 @@
   margin: 0 1rem;
   height: 35px;
   background: #dedede;
+}
+
+.card.selected {
+  outline: #2196f3 solid 2px;
 }

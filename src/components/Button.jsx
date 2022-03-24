@@ -3,7 +3,12 @@ import '../style/Button.css';
 
 function Button(props) {
   return (
-    <button onClick={props.onClick} className='btn-primary'>
+    <button
+      disabled={props.disabled}
+      onClick={props.onClick}
+      className='btn-primary'
+      style={props.style}
+    >
       {props.text}
     </button>
   );

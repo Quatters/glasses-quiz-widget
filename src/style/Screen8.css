@@ -1,0 +1,22 @@
+.s8.card-container {
+  display: flex;
+  overflow: auto;
+  width: 100vw;
+  padding: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.s8 .col > .card {
+  margin: 0.5rem 0.25rem;
+  padding: 0 1rem 1rem 1rem !important;
+  width: unset !important;
+}
+
+.s8 .col > .card p {
+  font-size: 14px;
+}
+
+.s8 .col > .card > img {
+  max-width: 35vw;
+  margin-bottom: 0.5rem !important;
+}
