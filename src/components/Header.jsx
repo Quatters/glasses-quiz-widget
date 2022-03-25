@@ -40,7 +40,7 @@ function Header(props) {
             onClick={props.onPrev}
             className='btn-transparent align-self-center'
           >
-            <img src={arrowLeft} alt='Next' />
+            <img src={arrowLeft} alt='Previous' />
           </button>
           <p className='align-self-center'>{props.screen}/10</p>
           <button onClick={props.onExit} className='btn-transparent'>
