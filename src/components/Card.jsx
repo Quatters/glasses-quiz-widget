@@ -1,12 +1,19 @@
-import React from 'react';
+import { React, useState } from 'react';
 import '../style/Card.css';
 import vIcon from '../img/(v) icon.svg';
 
 function Card(props) {
+  const [selected, setSelected] = useState(false);
+
+  function handleClick() {
+    setSelected(!selected);
+    props.onClick();
+  }
+
   return (
     <button
       className={`card d-flex w-100 align-items-center ${
-        props.selected ? 'selected' : ''
+        props.selected || selected ? 'selected' : ''
       } ${props.className} ${
         props.inline
           ? props.img
@@ -20,7 +27,7 @@ function Card(props) {
           props.inline ? (props.img ? '1.5rem 1.2rem' : '1rem 1.5rem') : '2rem'
         }`,
       }}
-      onClick={props.onClick}
+      onClick={handleClick}
     >
       <img
         src={vIcon}
