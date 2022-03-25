@@ -1,32 +1,62 @@
 import { React, useState } from 'react';
+import { SwitchTransition, CSSTransition } from 'react-transition-group';
 import Screen31 from './Screen31';
 import Between from './Between';
 import Screen32 from './Screen32';
 
 function Screen3(props) {
-  const [waiting, setWaiting] = useState(true);
-  const [show32, setShow32] = useState(false);
+  const [showing, setShowing] = useState('between');
 
-  if (show32)
+  if (showing === '32')
     return (
-      <Screen32
-        onSkip={() => props.onNext()}
-        onEnd={parameter => props.onNext(null, parameter)}
-      />
+      <SwitchTransition>
+        <CSSTransition
+          key={showing}
+          timeout={350}
+          classNames='screen'
+          unmountOnExit
+        >
+          <Screen32
+            onSkip={() => props.onNext()}
+            onEnd={parameter => props.onNext(null, parameter)}
+          />
+        </CSSTransition>
+      </SwitchTransition>
     );
-  else if (!waiting)
+  else if (showing === '31')
     return (
-      <Screen31 onSkip={() => props.onNext()} onNext={() => setShow32(true)} />
+      <SwitchTransition>
+        <CSSTransition
+          key={showing}
+          timeout={350}
+          classNames='screen'
+          unmountOnExit
+        >
+          <Screen31
+            onSkip={() => props.onNext()}
+            onNext={() => setShowing('32')}
+          />
+        </CSSTransition>
+      </SwitchTransition>
     );
 
   return (
-    <Between
-      text="Let's get to know you!"
-      timeout={2000}
-      onTimeout={() => {
-        setWaiting(false);
-      }}
-    />
+    <SwitchTransition>
+      <CSSTransition
+        key={showing}
+        timeout={350}
+        classNames='screen'
+        unmountOnExit
+      >
+        <Between
+          text="Let's get to know you!"
+          timeout={2000}
+          onTimeout={() => {
+            setShowing('31');
+          }}
+        />
+      </CSSTransition>
+    </SwitchTransition>
   );
 }
 

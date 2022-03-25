@@ -1,35 +1,63 @@
 import { React, useState } from 'react';
+import { SwitchTransition, CSSTransition } from 'react-transition-group';
 import Between from './Between';
 import Screen41 from './Screen41';
 import Screen42 from './Screen42';
 
 function Screen4(props) {
-  const [show42, setShow42] = useState(false);
-  const [waiting, setWaiting] = useState(false);
+  const [showing, setShowing] = useState('41');
 
-  if (waiting)
+  if (showing === 'between')
     return (
-      <Between
-        text="No worries, we've got you!"
-        timeout={2000}
-        onTimeout={() => {
-          setShow42(true);
-          setWaiting(false);
-        }}
-      />
+      <SwitchTransition>
+        <CSSTransition
+          key={showing}
+          timeout={350}
+          classNames='screen'
+          unmountOnExit
+        >
+          <Between
+            text="No worries, we've got you!"
+            timeout={2000}
+            onTimeout={() => {
+              setShowing('42');
+            }}
+          />
+        </CSSTransition>
+      </SwitchTransition>
     );
-  else if (show42)
+  else if (showing === '42')
     return (
-      <Screen42
-        onNext={parameter => props.onNext(null, parameter)}
-        onSkip={props.onNext}
-      />
+      <SwitchTransition>
+        <CSSTransition
+          key={showing}
+          timeout={350}
+          classNames='screen'
+          unmountOnExit
+        >
+          <Screen42
+            onNext={parameter => props.onNext(null, parameter)}
+            onSkip={props.onNext}
+          />
+        </CSSTransition>
+      </SwitchTransition>
     );
   return (
-    <Screen41
-      onNext={parameter => props.onNext(null, parameter)}
-      onDontKnow={() => setWaiting(true)}
-    />
+    <SwitchTransition>
+      <CSSTransition
+        key={showing}
+        timeout={350}
+        classNames='screen'
+        unmountOnExit
+      >
+        <Screen41
+          onNext={parameter => props.onNext(null, parameter)}
+          onDontKnow={() => {
+            setShowing('between');
+          }}
+        />
+      </CSSTransition>
+    </SwitchTransition>
   );
 }
 

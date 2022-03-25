@@ -1,4 +1,5 @@
 import { React, useState } from 'react';
+import { SwitchTransition, CSSTransition } from 'react-transition-group';
 import Header from './components/Header';
 import * as Screens from './screens';
 import './style/shared.css';
@@ -94,7 +95,16 @@ function App() {
         onExit={handleExit}
         screen={currentScreen}
       />
-      {getScreen(currentScreen)}
+      <SwitchTransition>
+        <CSSTransition
+          key={currentScreen}
+          timeout={350}
+          classNames='screen'
+          unmountOnExit
+        >
+          {getScreen(currentScreen)}
+        </CSSTransition>
+      </SwitchTransition>
     </>
   );
 }
