@@ -58,8 +58,11 @@ function Screen8(props) {
   }
 
   return (
-    <div className='screen'>
-      <p className='text-question' style={{ marginBottom: '0.5rem' }}>
+    <div className='screen p-0'>
+      <p
+        className='text-question'
+        style={{ marginBottom: '0.5rem', marginTop: '1.8rem' }}
+      >
         Which frame style are you looking for?
       </p>
       <p

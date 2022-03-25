@@ -1,7 +1,7 @@
 .s8.card-container {
   display: flex;
   overflow: auto;
-  width: 100vw;
+  width: 100%;
   padding: 0.5rem;
   margin-bottom: 0.8rem;
 }
@@ -25,7 +25,8 @@
 }
 
 .s8 .col > .card > .card-image {
-  width: 34vw;
+  width: 100%;
+  min-width: 8.2rem;
   max-width: 12rem;
   margin-bottom: 0.5rem !important;
 }
