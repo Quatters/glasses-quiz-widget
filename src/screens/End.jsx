@@ -19,7 +19,7 @@ function End(props) {
         style={{ marginTop: '3rem' }}
       />
       <p
-        className='btn-transparent text-small fixed-bottom fixed-centered'
+        className='btn-transparent text-small fixed-bottom'
         style={{ marginBottom: '1.5rem', width: '90%' }}
         onClick={props.onNext}
       >

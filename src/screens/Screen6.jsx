@@ -58,7 +58,7 @@ function Screen6(props) {
         />
       </div>
       <button
-        className='btn-transparent text-additional text-underlined fixed-bottom fixed-centered'
+        className='btn-transparent text-additional text-underlined fixed-bottom'
         style={{ marginBottom: '1.5rem' }}
         onClick={props.onNext}
       >

@@ -23,7 +23,7 @@ function Screen42(props) {
         text='Narrower than average'
       />
       <button
-        className='btn-transparent text-additional text-underlined fixed-bottom fixed-centered'
+        className='btn-transparent text-additional text-underlined fixed-bottom'
         style={{ marginBottom: '1.5rem' }}
         onClick={props.onSkip}
       >

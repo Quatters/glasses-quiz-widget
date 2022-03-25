@@ -26,7 +26,7 @@ function Screen2(props) {
         />
       </div>
       <button
-        className='btn-transparent text-additional text-underlined fixed-bottom fixed-centered'
+        className='btn-transparent text-additional text-underlined fixed-bottom'
         style={{ marginBottom: '1.5rem' }}
         onClick={event => props.onNext(event, { eyewear_type: null })}
       >
