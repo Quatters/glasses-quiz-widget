@@ -10,7 +10,11 @@ function Header(props) {
   return (
     <div className='header'>
       {(props.screen === 0 || props.screen === 11) && (
-        <div className='content without-progress'>
+        <div
+          className={`content ${
+            props.screen === 0 ? 'without-progress' : 'with-progress'
+          }`}
+        >
           <img className='logo' src={logo} alt='Otimax Dev logo' />
           {props.screen === 0 && (
             <button

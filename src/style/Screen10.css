@@ -6,15 +6,24 @@
   margin-bottom: 0.8rem;
 }
 
+.s10 .col:first-child {
+  margin-left: auto;
+}
+
+.s10 .col:last-child {
+  margin-right: auto;
+}
+
 .s10 .col > .card {
   padding: 1.25rem !important;
   margin: 0.5rem 0.25rem;
   width: unset !important;
-  min-height: 16vh;
+  height: 16vh;
   flex-direction: row;
 }
 
-.s10 .col > .card > img {
-  max-width: 33vw;
+.s10 .col > .card > .card-image {
+  width: 33vw;
+  max-width: 12rem;
   margin: 0 !important;
 }

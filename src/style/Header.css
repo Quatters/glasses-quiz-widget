@@ -17,3 +17,12 @@
 .content.with-progress {
   height: 58px;
 }
+
+.content.with-progress {
+  padding: 10px 25px;
+}
+
+.header .logo {
+  height: 100%;
+  width: auto;
+}

@@ -32,7 +32,7 @@ function Card(props) {
           <img
             src={props.img}
             alt=''
-            className='img'
+            className='card-image'
             style={{
               marginBottom: `${props.inline ? '0' : '1rem'}`,
             }}
