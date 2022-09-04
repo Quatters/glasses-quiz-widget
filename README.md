@@ -9,3 +9,7 @@
 Виджет `glasses-quiz-widget.min.js` сгенерируется в папку `build/`. Это готовый бандл, который можно подключать на любую html-страницу.
 
 Ветка [gh-pages](https://github.com/Quatters/glasses-quiz-widget/tree/gh-pages) содержит пример использования собранного виджета.
+
+## Результаты
+
+Финалист. Ссылка на таблицу с результатами (pdf): https://volga-it.org/wp-content/uploads/2022/06/js.pdf
